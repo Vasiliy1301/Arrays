@@ -44,7 +44,7 @@ public class Program
     int numbersMultiplication = multiplicationTable.GetLength(0);
     int columnsMultiplications = multiplicationTable.GetLength(1);
 
-        for (int i = 0; i < numbersMultiplication; i++)
+    for (int i = 0; i < numbersMultiplication; i++)
     {
         for (int j = 0; j < columnsMultiplications; j++)
         {
@@ -59,6 +59,55 @@ public class Program
             Console.WriteLine($"Row: {i + INCREASE_BY_ONE}: {i + INCREASE_BY_ONE} x {j + INCREASE_BY_ONE} = {multiplicationTable[i, j]}");
         }
     }
+
+    #endregion
+
+    #region Task 4
+
+    const int MINIMUM_VALUE = -100;
+    const int MAXIMUM_VALUE = 101;
+
+    Random randomNumbers = new();
+
+    int[,] array = new int[5, 5];
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = randomNumbers.Next(MINIMUM_VALUE, MAXIMUM_VALUE);
+        }
+    }
+
+    int maximumElement = array[0, 0];
+    int minimumElement = array[0, 0];
+    int maximumFoundRow = 0;
+    int maximumFoundCol = 0;
+    int minimumFoundRow = 0;
+    int minimumFoundCol = 0;
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] > maximumElement)
+            {
+                maximumElement = array[i, j];
+                maximumFoundRow = i;
+                maximumFoundCol = j;
+            }
+        
+            if (array[i, j] < minimumElement)
+            {
+                minimumElement = array[i, j];
+                minimumFoundRow = i;
+                minimumFoundCol = j;
+            }
+        }
+    }
+
+    Console.Write($"\nMaximum element - {maximumElement}, coordinates [{maximumFoundRow},{maximumFoundCol}]" +
+                  $"\nMinimum element - {minimumElement}, coordinates [{minimumFoundRow},{minimumFoundCol}]\n");
 
     #endregion
 }
