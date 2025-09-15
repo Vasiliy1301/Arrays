@@ -34,4 +34,31 @@ public class Program
     : $"The total sum of the numbers is negative = {totalSumOfNumbers}.");
 
     #endregion
+    
+    #region Task 3
+    
+    const int INCREASE_BY_ONE = 1;
+
+    int[,] multiplicationTable = new int[9, 9];
+
+    int numbersMultiplication = multiplicationTable.GetLength(0);
+    int columnsMultiplications = multiplicationTable.GetLength(1);
+
+        for (int i = 0; i < numbersMultiplication; i++)
+    {
+        for (int j = 0; j < columnsMultiplications; j++)
+        {
+            multiplicationTable[i, j] = (i + INCREASE_BY_ONE) * (j + INCREASE_BY_ONE);
+        }
+    }
+
+    for (int i = 0; i < numbersMultiplication; i++)
+    {
+        for (int j = 0; j < columnsMultiplications; j++)
+        {
+            Console.WriteLine($"Row: {i + INCREASE_BY_ONE}: {i + INCREASE_BY_ONE} x {j + INCREASE_BY_ONE} = {multiplicationTable[i, j]}");
+        }
+    }
+
+    #endregion
 }
