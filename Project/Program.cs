@@ -17,6 +17,7 @@ public class Program
     for (int i = 0; i < numbers.Length; i++)
     {
         numbers[i] = randomNumber.Next(MINIMUM_VALUE, MAXIMUM_VALUE);
+        totalSumOfNumbers += numbers[i];
     }
 
     Console.WriteLine("Outputting an array with a paired index.\n");
@@ -24,7 +25,6 @@ public class Program
     for (int i = 0; i < numbers.Length; i += PairedIndex)
     {
         Console.WriteLine($"Index {i}: {numbers[i]}");
-        totalSumOfNumbers += numbers[i];
     }
 
     Console.WriteLine();
@@ -108,6 +108,12 @@ public class Program
 
     Console.Write($"\nMaximum element - {maximumElement}, coordinates [{maximumFoundRow},{maximumFoundCol}]" +
                   $"\nMinimum element - {minimumElement}, coordinates [{minimumFoundRow},{minimumFoundCol}]\n");
+
+    #endregion
+
+    #region Task 5
+
+    
 
     #endregion
 }
