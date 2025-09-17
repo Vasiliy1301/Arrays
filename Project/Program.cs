@@ -113,7 +113,25 @@ public class Program
 
     #region Task 5
 
-    
+    Console.Write("Enter the number of days: ");
+    int input = Convert.ToInt32(Console.ReadLine());
+
+    input = ((input % 7) + 7) % 7;
+
+    WeekDays day = (WeekDays)input;
+
+    Console.WriteLine($"Day of the week - {day}.");
+
+    enum WeekDays
+    {
+        Monday = 0,
+        Tuesday = 1,
+        Wednesday = 2,
+        Thursday = 3,
+        Friday = 4,
+        Saturday = 5,
+        Sunday = 6
+    }
 
     #endregion
 }
